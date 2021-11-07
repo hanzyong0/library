@@ -3,6 +3,7 @@ const newBook = document.querySelector('#newBook');
 const form = document.querySelector('.form-popup');
 const closeForm = document.querySelector('#close');
 const submit = document.querySelector('#submit');
+const tbody = document.querySelector('tbody');
 
 let myLibrary = [];
 
@@ -29,22 +30,42 @@ function addBookToLibrary() {
 
 // Display books by creating elements
 function displayBook() {
-    let currentBook = myLibrary[myLibrary.length - 1];
-    const row = document.createElement('tr');
-    const title = document.createElement('td');
-    title.textContent = currentBook.title;
-    row.appendChild(title);
-    const author = document.createElement('td');
-    author.textContent = currentBook.author;
-    row.appendChild(author);
-    const pages = document.createElement('td');
-    pages.textContent = currentBook.pages;
-    row.appendChild(pages);
-    const status = document.createElement('td');
-    status.textContent = currentBook.status;
-    row.appendChild(status);
+    while (tbody.hasChildNodes()) {
+        tbody.removeChild(tbody.lastChild);
+    };
+    for (let i = 0; i < myLibrary.length; i++) {
+        const row = document.createElement('tr');
 
-    table.appendChild(row);
+        const title = document.createElement('td');
+        title.textContent = myLibrary[i].title;
+        row.appendChild(title);
+
+        const author = document.createElement('td');
+        author.textContent = myLibrary[i].author;
+        row.appendChild(author);
+
+        const pages = document.createElement('td');
+        pages.textContent = myLibrary[i].pages;
+        row.appendChild(pages);
+
+        const status = document.createElement('td');
+        status.textContent = myLibrary[i].status;
+        row.appendChild(status);
+
+        const remove = document.createElement('td');
+        const removeBtn = document.createElement('button');
+        removeBtn.setAttribute('type', 'button');
+        removeBtn.dataset.index = i;
+        removeBtn.textContent = 'Remove';
+        removeBtn.addEventListener('click', (e) => {
+            myLibrary.splice(e.target.getAttribute('data-index'), 1);
+            displayBook();
+        })
+        remove.appendChild(removeBtn);
+        row.appendChild(remove);
+
+        tbody.appendChild(row);
+    };
 }
 
 // Button to add new book
@@ -64,3 +85,6 @@ submit.addEventListener('click', () => {
     closeForm.click();
     document.querySelector('.form-container').reset()
 });
+
+
+

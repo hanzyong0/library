@@ -23,7 +23,7 @@ td {
 
 table {
     table-layout: fixed;
-    width: 500px;
+    width: 800px;
 }
 
 th {
@@ -60,7 +60,6 @@ td {
 .form-control {
     margin: 10px;
 }
-
 
 .form-control input, 
 .form-control select {
