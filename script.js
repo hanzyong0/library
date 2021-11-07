@@ -19,6 +19,7 @@ function Book(title, author, pages, status) {
 }
 
 // Add book objects to myLibrary array
+// Get arguments from popup form
 function addBookToLibrary() {
     title = document.querySelector('#title').value;
     author = document.querySelector('#author').value;
@@ -49,8 +50,29 @@ function displayBook() {
         row.appendChild(pages);
 
         const status = document.createElement('td');
-        status.textContent = myLibrary[i].status;
+        if (myLibrary[i].status == 'read') {
+            status.textContent = 'Read';
+        } else {
+            status.textContent = 'Not Read';
+        };
         row.appendChild(status);
+
+        const change = document.createElement('td');
+        const changeBtn = document.createElement('button');
+        changeBtn.setAttribute('type', 'button');
+        changeBtn.dataset.index = i;
+        changeBtn.textContent = 'Change Status';
+        changeBtn.addEventListener('click', (e) => {
+            if (myLibrary[e.target.dataset.index].status == 'read') {
+                myLibrary[e.target.dataset.index].status = 'not-read';
+                displayBook();
+            } else {
+                myLibrary[e.target.dataset.index].status = 'read';
+                displayBook();
+            };
+        });
+        change.appendChild(changeBtn);
+        row.appendChild(change);
 
         const remove = document.createElement('td');
         const removeBtn = document.createElement('button');
@@ -58,7 +80,7 @@ function displayBook() {
         removeBtn.dataset.index = i;
         removeBtn.textContent = 'Remove';
         removeBtn.addEventListener('click', (e) => {
-            myLibrary.splice(e.target.getAttribute('data-index'), 1);
+            myLibrary.splice(e.target.dataset.index, 1);
             displayBook();
         })
         remove.appendChild(removeBtn);
