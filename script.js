@@ -2,6 +2,7 @@ const table = document.querySelector('table');
 const newBook = document.querySelector('#newBook');
 const form = document.querySelector('.form-popup');
 const closeForm = document.querySelector('#close');
+const submit = document.querySelector('#submit');
 
 let myLibrary = [];
 
@@ -18,10 +19,10 @@ function Book(title, author, pages, status) {
 
 // Add book objects to myLibrary array
 function addBookToLibrary() {
-    title = prompt('title?');
-    author = prompt('author');
-    pages = prompt('pages');
-    status = prompt('status');
+    title = document.querySelector('#title').value;
+    author = document.querySelector('#author').value;
+    pages = document.querySelector('#pages').value;
+    status = document.querySelector('#status').value;
     const book = new Book(title, author, pages, status);
     myLibrary.push(book);
 }
@@ -54,4 +55,12 @@ newBook.addEventListener('click', () => {
 // Button to close popup form
 closeForm.addEventListener('click', () => {
     form.style.display = 'none';
+});
+
+// Button to store book object into myLibrary
+submit.addEventListener('click', () => {
+    addBookToLibrary();
+    displayBook();
+    closeForm.click();
+    document.querySelector('.form-container').reset()
 });
