@@ -1,4 +1,7 @@
 const table = document.querySelector('table');
+const newBook = document.querySelector('#newBook');
+const form = document.querySelector('.form-popup');
+const closeForm = document.querySelector('#close');
 
 let myLibrary = [];
 
@@ -42,3 +45,13 @@ function displayBook() {
 
     table.appendChild(row);
 }
+
+// Button to add new book
+newBook.addEventListener('click', () => {
+    form.style.display = 'block'
+});
+
+// Button to close popup form
+closeForm.addEventListener('click', () => {
+    form.style.display = 'none';
+});
