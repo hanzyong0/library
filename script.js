@@ -8,14 +8,16 @@ const tbody = document.querySelector('tbody');
 let myLibrary = [];
 
 // Constructor function to create book object
-function Book(title, author, pages, status) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.status = status;
-    this.info = function () {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.status}`;
-    };
+class Book {
+    constructor(title, author, pages, status) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.status = status;
+        this.info = function () {
+            return `${this.title} by ${this.author}, ${this.pages} pages, ${this.status}`;
+        };
+    }
 }
 
 // Add book objects to myLibrary array
