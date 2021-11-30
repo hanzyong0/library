@@ -5,7 +5,7 @@ const closeForm = document.querySelector('#close');
 const submit = document.querySelector('#submit');
 const tbody = document.querySelector('tbody');
 
-let myLibrary = [];
+const myLibrary = [];
 
 // Constructor function to create book object
 class Book {
@@ -104,10 +104,13 @@ closeForm.addEventListener('click', () => {
 
 // Button to store book object into myLibrary
 submit.addEventListener('click', () => {
-    addBookToLibrary();
-    displayBook();
-    closeForm.click();
-    document.querySelector('.form-container').reset()
+    const form = document.querySelector('.form-container');
+    if (form.checkValidity()) {
+        addBookToLibrary();
+        displayBook();
+        closeForm.click();
+        document.querySelector('.form-container').reset()
+    };
 });
 
 

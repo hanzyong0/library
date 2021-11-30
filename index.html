@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js" defer></script>
-        <title>Library</title>
-    </head>
-    <body>
-        <button type="button" id="newBook">New Book</button>
-        <div class="form-popup">
-            <form class="form-container">
-                <div class="form-control">
-                    <label for="title">Title:</label>
-                    <br>
-                    <input type="text" id="title">
-                </div>
-                <div class="form-control">
-                    <label for="author">Author:</label>
-                    <br>
-                    <input type="text" id="author">
-                </div>
-                <div class="form-control">
-                    <label for="pages">Pages:</label>
-                    <br>
-                    <input type="number" id="pages">
-                </div>
-                <div class="form-control">
-                    <label for="status">Status:</label>
-                    <br>
-                    <select id="status">
-                        <option value="read">Read</option>
-                        <option value="not-read">Not Read</option>
-                    </select>
-                </div>
-                <div class="form-buttons">
-                    <button type="button" id="submit">Submit</button>
-                    <button type="button" id="close">Close</button>
-                </div>
-            </form>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Pages</th>
-                    <th>Status</th>
-                    <th>Change Status</th>
-                    <th>Remove</th>
-                </tr>
-            </thead>
-            <tbody>
 
-            </tbody>
-        </table>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Library</title>
+</head>
 
-    </body>
+<body>
+    <button type="button" id="newBook">New Book</button>
+    <div class="form-popup">
+        <form class="form-container">
+            <div class="form-control">
+                <label for="title">Title:</label>
+                <br>
+                <input type="text" id="title" required>
+            </div>
+            <div class="form-control">
+                <label for="author">Author:</label>
+                <br>
+                <input type="text" id="author" required>
+            </div>
+            <div class="form-control">
+                <label for="pages">Pages:</label>
+                <br>
+                <input type="number" id="pages" required>
+            </div>
+            <div class="form-control">
+                <label for="status">Status:</label>
+                <br>
+                <select id="status">
+                    <option value="read">Read</option>
+                    <option value="not-read">Not Read</option>
+                </select>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" id="submit">Submit</button>
+                <button type="button" id="close">Close</button>
+            </div>
+        </form>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Status</th>
+                <th>Change Status</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+</body>
+
 </html>

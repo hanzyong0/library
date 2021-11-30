@@ -1,84 +1,84 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
+	height: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
 }
 
 table,
 th,
 td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    text-align: center;
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
 }
 
 table {
-    table-layout: fixed;
-    width: 800px;
+	table-layout: fixed;
+	width: 800px;
 }
 
 th {
-    border: 2px solid black;
+	border: 2px solid black;
 }
 
 th,
 td {
-    overflow: auto;
-    white-space: normal;
-    padding: 5px;
+	overflow: auto;
+	white-space: normal;
+	padding: 5px;
 }
 
 #newBook {
-    margin: 50px;
-    padding: 10px;
-    font-size: 1em;
+	margin: 50px;
+	padding: 10px;
+	font-size: 1em;
 }
 
-.form-popup{
-    display: none;
-    z-index: 9;
-    border: 3px solid black;
-    width: 100%;
-    position: fixed;
-    top: 20%;
+.form-popup {
+	display: none;
+	z-index: 9;
+	border: 3px solid black;
+	width: 100%;
+	position: fixed;
+	top: 20%;
 }
 
 .form-container {
-    padding: 10px;
-    background-color: #ddd;
+	padding: 10px;
+	background-color: #ddd;
 }
 
 .form-control {
-    margin: 10px;
+	margin: 10px;
 }
 
-.form-control input, 
+.form-control input,
 .form-control select {
-    width: 100%;
-    padding: 10px;
-    font-size: 1em;
+	width: 100%;
+	padding: 10px;
+	font-size: 1em;
 }
 
 .form-buttons {
-    margin: 20px;
-    display: flex;
-    justify-content: space-evenly;
+	margin: 20px;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .form-buttons button {
-    padding: 16px 20px;
-    cursor: pointer;
+	padding: 16px 20px;
+	cursor: pointer;
 }
 
 button:hover {
-    opacity: 1;
+	opacity: 1;
 }
